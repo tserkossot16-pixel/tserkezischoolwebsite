@@ -71,7 +71,7 @@ body{font-family:'DM Sans',sans-serif;background:var(--sand);color:var(--espress
 
 /* ── NAV ── */
 nav{position:sticky;top:0;z-index:200;background:rgba(240,230,210,.95);backdrop-filter:blur(16px);border-bottom:1px solid var(--border);padding:0 6%;display:flex;align-items:center;justify-content:space-between;height:100px;}
-.nav-logo{text-decoration:none;display:flex;align-items:center;gap:.5rem;}
+.nav-logo{text-decoration:none;display:flex;align-items:center;gap:.1rem;}
 .nav-logo-mark{width:32px;height:32px;background:var(--olive);border-radius:6px;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
 .nav-logo-mark svg{width:18px;height:18px;fill:var(--sand);}
 .nav-logo-text{font-size:1.05rem;font-weight:700;color:var(--espresso);letter-spacing:-.01em;}
@@ -410,9 +410,7 @@ footer{background:var(--espresso);padding:2.6rem 8% 1.7rem;}
 <!-- NAV -->
 <nav>
   <a class="nav-logo" href="#home">
-    <div class="nav-logo-mark">
-      <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 14H9V8h2v8zm4 0h-2V8h2v8z"/></svg>
-    </div>
+      <img src="logo_trans.png" alt="logo" height="120"/>
     <span class="nav-logo-text">Tserkezis <span data-el="Φροντιστήριο Αγγλικών" data-en="English School">Φροντιστήριο Αγγλικών</span></span>
   </a>
   <button class="nav-toggle" id="navToggle" onclick="toggleMobileMenu()" aria-label="Menu" aria-expanded="false" aria-controls="navLinks">
@@ -444,7 +442,7 @@ footer{background:var(--espresso);padding:2.6rem 8% 1.7rem;}
     </div>
     <div class="hero-trust">
       <div class="trust-item"><div class="trust-num">6</div><div class="trust-lbl" data-el="Επίπεδα CEFR" data-en="CEFR Levels">Επίπεδα CEFR</div></div>
-      <div class="trust-item"><div class="trust-num">2</div><div class="trust-lbl" data-el="Τρόποι" data-en="Modes">Τρόποι</div></div>
+      <div class="trust-item"><div class="trust-num">2</div><div class="trust-lbl" data-el="Τρόποι Εκμάθησης" data-en="Modes">Τρόποι Εκμάθησης</div></div>
       <div class="trust-item"><div class="trust-num">100%</div><div class="trust-lbl" data-el="Αγγλικά" data-en="English">Αγγλικά</div></div>
     </div>
   </div>
@@ -492,7 +490,7 @@ footer{background:var(--espresso);padding:2.6rem 8% 1.7rem;}
 
           <div class="stats-row">
               <div class="stat"><div class="stat-num">6</div><div class="stat-lbl" data-el="Επίπεδα CEFR" data-en="CEFR Levels">Επίπεδα CEFR</div></div>
-              <div class="stat"><div class="stat-num">2</div><div class="stat-lbl" data-el="Τρόποι" data-en="Modes">Τρόποι</div></div>
+              <div class="stat"><div class="stat-num">2</div><div class="stat-lbl" data-el="Τρόποι Τρόποι Εκμάθησης" data-en="Modes">Τρόποι Εκμάθησης</div></div>
               <div class="stat"><div class="stat-num">A1–C2</div><div class="stat-lbl" data-el="Όλα τα επίπεδα" data-en="All levels">Όλα τα επίπεδα</div></div>
           </div>
       </div>
@@ -526,7 +524,7 @@ footer{background:var(--espresso);padding:2.6rem 8% 1.7rem;}
 
 <!-- COURSES -->
 <section id="courses">
-  <div class="section-eyebrow reveal" data-el="Τα Μαθήματά μας" data-en="Our Courses">Τα Μαθήματά μας</div>
+    <div class="section-eyebrow reveal" data-el="Τα Τμήματα μας" data-en="Our Courses">Τα Τμήματα μας</div>
   <h2 class="section-title reveal">English for every level.</h2>
   <p class="section-title-el reveal" data-el="Αγγλικά για κάθε επίπεδο." data-en="Αγγλικά για κάθε επίπεδο.">Αγγλικά για κάθε επίπεδο.</p>
   <div class="courses-grid">
@@ -562,18 +560,6 @@ footer{background:var(--espresso);padding:2.6rem 8% 1.7rem;}
     </div>
   </div>
 </section>
-
-<!-- MARIGOLD FLASH BANNER — youth/activity content only per brand guide -->
-<div class="flash-banner">
-  <div class="fb-left">
-    <div class="fb-icon">🎮</div>
-    <div>
-      <div class="fb-title">Game day! Who's ready? — <span data-el="Ποιος είναι έτοιμος;" data-en="Ποιος είναι έτοιμος;">Ποιος είναι έτοιμος;</span></div>
-      <div class="fb-sub" data-el="Διασκεδαστικές δραστηριότητες, παιχνίδια και ανταγωνισμοί στην τάξη μας." data-en="Fun activities, games and competitions happening in our classrooms.">Διασκεδαστικές δραστηριότητες, παιχνίδια και ανταγωνισμοί στην τάξη μας.</div>
-    </div>
-  </div>
-  <a href="#contact" class="btn-flash" data-el="Κλείστε ένα δωρεάν μάθημα →" data-en="Book a free trial class →">Κλείστε ένα δωρεάν μάθημα →</a>
-</div>
 
 <!-- Hidden forms for Netlify -->
 <form name="translation" netlify netlify-honeypot="bot-field" hidden>
@@ -661,7 +647,7 @@ footer{background:var(--espresso);padding:2.6rem 8% 1.7rem;}
       <div class="quiz-step" data-step="result">
         <div class="quiz-result">
           <span class="qr-icon">✅</span>
-          <div class="qr-title" data-el="Αίτημα ελήφθη!" data-en="Request Received!">Αίτημα ελήφθη!</div>
+          <div class="qr-title" data-el="Αίτημα ελήφθη, Ευχαριστούμε!" data-en="Request Received!">Αίτημα ελήφθη!</div>
           <p class="qr-sub">We'll be in touch within 24 hours · Θα επικοινωνήσουμε εντός 24 ωρών.</p>
           <div class="qr-summary" id="qrSummary"></div>
           <button class="btn-qnext" onclick="qReset()" data-el="Νέο Αίτημα" data-en="New Request">Νέο Αίτημα</button>
@@ -722,7 +708,7 @@ footer{background:var(--espresso);padding:2.6rem 8% 1.7rem;}
   <div class="map-pin-wrap">
     <span class="map-pin">📍</span>
     <div class="map-addr">Αναγεννήσεως 131, Ορεστιάδα 68200</div>
-    <a class="map-btn" href="https://maps.google.com/?q=131+Anagenniseos,+Orestiada+68200,+Greece" target="_blank" data-el="Άνοιγμα στους Χάρτες ↗" data-en="Open in Maps ↗">Άνοιγμα στους Χάρτες ↗</a>
+    <a class="map-btn" href="https://maps.app.goo.gl/h2dcnAobUKkBDRHX8" target="_blank" data-el="Άνοιγμα στους Χάρτες ↗" data-en="Open in Maps ↗">Άνοιγμα στους Χάρτες ↗</a>
   </div>
 </div>
 
