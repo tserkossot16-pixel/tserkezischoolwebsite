@@ -295,12 +295,48 @@ select{appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='ht
 /* ── MAP STRIP ── */
 .map-strip{height:260px;background:linear-gradient(135deg,#e6dbc8,#d4c9b0);display:flex;align-items:center;justify-content:center;border-top:1px solid var(--border);position:relative;overflow:hidden;}
 .map-strip::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 50% 70% at 50% 50%,rgba(111,123,74,.08),transparent);}
-.map-pin-wrap{text-align:center;position:relative;z-index:1;}
-.map-pin{font-size:2.6rem;animation:pinBounce 2.3s ease-in-out infinite;display:block;margin-bottom:.4rem;}
+    .map-pin-wrap {
+        float: right;
+        text-align: center;
+        position: relative;
+        z-index: 1;
+        padding: 20px;
+    }
+.map-pin{right:30px;font-size:2.6rem;animation:pinBounce 2.3s ease-in-out infinite;display:block;margin-bottom:.4rem;}
 @keyframes pinBounce{0%,100%{transform:translateY(0);}50%{transform:translateY(-9px);}}
 .map-addr{font-weight:700;color:var(--espresso);font-size:.9rem;}
 .map-btn{display:inline-block;margin-top:.7rem;background:var(--olive);color:var(--white);padding:.45rem 1.25rem;border-radius:6px;text-decoration:none;font-size:.78rem;font-weight:700;transition:background .2s;}
 .map-btn:hover{background:var(--olive-dk);}
+    .insta-graphic {
+        right: 30px;
+        font-size: 2.6rem;
+        animation: pinBounce 2.3s ease-in-out infinite;
+        display: block;
+        margin-bottom: .4rem;
+    }
+    .insta-addr {
+        font-weight: 700;
+        color: var(--espresso);
+        font-size: .9rem;
+    }
+    .insta-btn {
+        position:relative;
+        z-index:100;
+        display: inline-block;
+        margin-top: .7rem;
+        background: var(--olive);
+        color: var(--white);
+        padding: .45rem 1.25rem;
+        border-radius: 6px;
+        text-decoration: none;
+        font-size: .78rem;
+        font-weight: 700;
+        transition: background .2s;
+    }
+    .insta-whole {
+        float:left;
+        text-align:center;
+    }
 
 /* ── FOOTER ── */
 footer{background:var(--espresso);padding:2.6rem 8% 1.7rem;}
@@ -465,15 +501,6 @@ footer{background:var(--espresso);padding:2.6rem 8% 1.7rem;}
     <div class="float-badge badge-br">📍 <span>Ορεστιάδα, Ελλάδα</span></div>
   </div>
 </section>
-
-<!-- OLIVE DIVIDER -->
-<div class="olive-divider">
-  <div class="od-line"></div>
-  <span class="od-icon">🫒</span>
-  <span class="od-text" data-el="Ριζωμένοι στην Ορεστιάδα · Real teachers · Real conversation" data-en="Rooted in Orestiada · Real teachers · Real conversation">Ριζωμένοι στην Ορεστιάδα · Real teachers · Real conversation</span>
-  <span class="od-icon">🫒</span>
-  <div class="od-line"></div>
-</div>
 
 <!-- ABOUT -->
 <section id="about">
@@ -705,11 +732,20 @@ footer{background:var(--espresso);padding:2.6rem 8% 1.7rem;}
 
 <!-- MAP -->
 <div class="map-strip">
-  <div class="map-pin-wrap">
-    <span class="map-pin">📍</span>
-    <div class="map-addr">Αναγεννήσεως 131, Ορεστιάδα 68200</div>
-    <a class="map-btn" href="https://maps.app.goo.gl/h2dcnAobUKkBDRHX8" target="_blank" data-el="Άνοιγμα στους Χάρτες ↗" data-en="Open in Maps ↗">Άνοιγμα στους Χάρτες ↗</a>
-  </div>
+    <div class="insta-whole">
+        <span class="insta-graphic">
+            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-instagram" viewBox="0 0 16 16">
+                <path d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.9 3.9 0 0 0-1.417.923A3.9 3.9 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.9 3.9 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.9 3.9 0 0 0-.923-1.417A3.9 3.9 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599s.453.546.598.92c.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.5 2.5 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.5 2.5 0 0 1-.92-.598 2.5 2.5 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233s.008-2.388.046-3.231c.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92s.546-.453.92-.598c.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92m-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217m0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334" />
+            </svg>
+        </span>
+        <div class="insta-addr">Βρείτε μας στο Instagram!</div>
+        <a class="insta-btn" href="https://www.instagram.com/tserkezischoolofenglish?igsi=ZDNlZDc0MzIxNw==" target="_blank" data-el="Instagram" data-en="Instagram">Instagram</a>
+    </div>
+    <div class="map-pin-wrap">
+        <span class="map-pin">📍</span>
+        <div class="map-addr">Αναγεννήσεως 131, Ορεστιάδα 68200</div>
+        <a class="map-btn" href="https://maps.app.goo.gl/h2dcnAobUKkBDRHX8" target="_blank" data-el="Άνοιγμα στους Χάρτες ↗" data-en="Open in Maps ↗">Άνοιγμα στους Χάρτες ↗</a>
+    </div>
 </div>
 
 <!-- FOOTER -->
