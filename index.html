@@ -258,22 +258,10 @@ section{padding:90px 8%;}
 .quiz-field:focus{outline:none;border-color:var(--terra);}
 textarea.quiz-field{min-height:82px;resize:vertical;}
 .quiz-footer{display:flex;justify-content:space-between;align-items:center;}
-.btn-qnext{z-index:3;background:var(--terra);color:var(--white);border:none;padding:.68rem 1.6rem;border-radius:7px;font-weight:700;font-size:.84rem;font-family:'DM Sans',sans-serif;transition:background .2s,transform .15s;box-shadow:0 4px 16px rgba(194,90,50,.36);cursor:pointer;}
-.btn-qnext:hover{z-index:3;background:var(--terra-lt);transform:translateY(-2px);}
-.btn-qback{z-index:3;background:transparent;color:rgba(255,255,255,.36);border:none;font-size:.82rem;font-family:'DM Sans',sans-serif;transition:color .2s;cursor:pointer;}
-.btn-qback:hover{z-index:3;color:var(--white);}
-.qz-drop{border:0px dashed rgba(255,255,255,.22);border-radius:9px;padding:1.6rem 1rem;text-align:center;cursor:pointer;transition:all .18s;margin-bottom:1rem;position:static;}
-.qz-drop:hover,.qz-drop.qz-drag{background:rgba(255,255,255,.0);border-color:var(--terra);}
-.qz-drop input[type="file"]{position:absolute;inset:0;opacity:0;cursor:pointer;width:100%;height:100%;}
-.qz-drop-ico{font-size:1.6rem;margin-bottom:.4rem;}
-.qz-drop-txt{color:rgba(255,255,255,.68);font-size:.85rem;font-weight:500;}
-.qz-drop-sub{color:rgba(255,255,255,.32);font-size:.72rem;margin-top:.3rem;}
-.qz-file-list{z-index:2;display:flex;flex-direction:column;gap:.4rem;margin-bottom:1rem;}
-.qz-file-item{z-index:2;display:flex;align-items:center;justify-content:space-between;gap:.6rem;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.09);border-radius:7px;padding:.5rem .7rem;font-size:.78rem;color:rgba(255,255,255,.75);}
-.qz-file-name{z-index:2;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
-.qz-file-rm{z-index:2;background:transparent;border:none;color:rgba(255,255,255,.4);cursor:pointer;font-size:.95rem;line-height:1;flex-shrink:0;}
-.qz-file-rm:hover{z-index:2;color:var(--terra-lt);}
-.qz-skip{text-align:center;color:rgba(255,255,255,.3);font-size:.75rem;margin-top:-.2rem;margin-bottom:.9rem;}
+.btn-qnext{background:var(--terra);color:var(--white);border:none;padding:.68rem 1.6rem;border-radius:7px;font-weight:700;font-size:.84rem;font-family:'DM Sans',sans-serif;transition:background .2s,transform .15s;box-shadow:0 4px 16px rgba(194,90,50,.36);cursor:pointer;}
+.btn-qnext:hover{background:var(--terra-lt);transform:translateY(-2px);}
+.btn-qback{background:transparent;color:rgba(255,255,255,.36);border:none;font-size:.82rem;font-family:'DM Sans',sans-serif;transition:color .2s;cursor:pointer;}
+.btn-qback:hover{color:var(--white);}
 .quiz-result{text-align:center;padding:1.2rem 0;}
 .qr-icon{font-size:2.6rem;margin-bottom:.8rem;display:block;}
 .qr-title{font-size:1.45rem;font-weight:700;color:var(--white);margin-bottom:.5rem;letter-spacing:-.01em;}
@@ -601,12 +589,11 @@ footer{background:var(--espresso);padding:2.6rem 8% 1.7rem;}
 </section>
 
 <!-- Hidden forms for Netlify -->
-<form name="translation" enctype="multipart/form-data" netlify netlify-honeypot="bot-field" hidden>
+<form name="translation" netlify netlify-honeypot="bot-field" hidden>
   <input type="text" name="name"><input type="email" name="email">
   <input type="text" name="document-type"><input type="text" name="source-language">
   <input type="text" name="document-length"><input type="text" name="urgency">
   <textarea name="notes"></textarea>
-  <input type="file" name="attachment" multiple>
 </form>
 
 <!-- TRANSLATION -->
@@ -628,7 +615,7 @@ footer{background:var(--espresso);padding:2.6rem 8% 1.7rem;}
       </div>
     <div class="quiz-box reveal" style="transition-delay:.15s;">
       <div class="qpb" id="qpb">
-        <div class="qps active"></div><div class="qps"></div><div class="qps"></div><div class="qps"></div><div class="qps"></div><div class="qps"></div>
+        <div class="qps active"></div><div class="qps"></div><div class="qps"></div><div class="qps"></div><div class="qps"></div>
       </div>
       <!-- Step 1 -->
       <div class="quiz-step active" data-step="1">
@@ -676,20 +663,6 @@ footer{background:var(--espresso);padding:2.6rem 8% 1.7rem;}
       </div>
       <!-- Step 5 -->
       <div class="quiz-step" data-step="5">
-        <div class="quiz-q" data-el="Επισύναψη αρχείων" data-en="Attach your files">Επισύναψη αρχείων</div>
-        <div class="quiz-q-sub" data-el="PDF, Word ή φωτογραφίες του εγγράφου — έως 5 αρχεία, 10MB το καθένα." data-en="PDF, Word or photos of the document — up to 5 files, 10MB each.">PDF, Word ή φωτογραφίες του εγγράφου — έως 5 αρχεία, 10MB το καθένα.</div>
-        <label class="qz-drop" id="qFileDrop">
-          <input type="file" id="q-files" accept=".pdf,.doc,.docx,.jpg,.jpeg,.png,.heic,application/pdf,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document,image/*" multiple>
-          <div class="qz-drop-ico">📎</div>
-          <div class="qz-drop-txt" data-el="Σύρετε αρχεία εδώ ή πατήστε για επιλογή" data-en="Drag files here or click to browse">Σύρετε αρχεία εδώ ή πατήστε για επιλογή</div>
-          <div class="qz-drop-sub" data-el="PDF, DOC, DOCX, JPG, PNG" data-en="PDF, DOC, DOCX, JPG, PNG">PDF, DOC, DOCX, JPG, PNG</div>
-        </label>
-        <div class="qz-file-list" id="qFileList"></div>
-        <div class="qz-skip" data-el="Προαιρετικό — μπορείτε να συνεχίσετε χωρίς αρχεία." data-en="Optional — you can continue without attaching files.">Προαιρετικό — μπορείτε να συνεχίσετε χωρίς αρχεία.</div>
-        <div class="quiz-footer"><button class="btn-qback" onclick="qBack()" data-el="← Πίσω" data-en="← Back">← Πίσω</button><button class="btn-qnext" onclick="qNext()" data-el="Επόμενο →" data-en="Next →">Επόμενο →</button></div>
-      </div>
-      <!-- Step 6 -->
-      <div class="quiz-step" data-step="6">
         <div class="quiz-q" data-el="Στοιχεία επικοινωνίας" data-en="Contact details">Στοιχεία επικοινωνίας</div>
         <div class="quiz-q-sub">Free quote within 24h · Δωρεάν προσφορά εντός 24 ωρών.</div>
         <input class="quiz-field" type="text" id="q-name" placeholder="Name / Ονοματεπώνυμο">
@@ -857,7 +830,7 @@ function qNext(){
   const se=document.querySelector(`.quiz-step[data-step="${qStep}"]`);
   const sel=se&&se.querySelector('.quiz-opt.sel');
   if(qStep<=4&&!sel){alert(lang==='el'?'Παρακαλώ επιλέξτε μια απάντηση.':'Please select an option.');return;}
-  if(qStep<6){qStep++;qShow(qStep);}
+  if(qStep<5){qStep++;qShow(qStep);}
 }
 function qBack(){if(qStep>1){qStep--;qShow(qStep);}}
 document.querySelectorAll('.quiz-opt').forEach(btn=>{
@@ -868,39 +841,6 @@ document.querySelectorAll('.quiz-opt').forEach(btn=>{
     qAns[s]=btn.getAttribute(lang==='el'?'data-vel':'data-ven')||btn.textContent.trim();
   });
 });
-/* ── QUIZ FILE UPLOAD ── */
-let qFiles=[];
-const QZ_MAX_FILES=5,QZ_MAX_SIZE=10*1024*1024;
-function qFileBytes(n){
-  if(n<1024)return n+' B';
-  if(n<1024*1024)return (n/1024).toFixed(0)+' KB';
-  return (n/(1024*1024)).toFixed(1)+' MB';
-}
-function qRenderFiles(){
-  const list=document.getElementById('qFileList');
-  if(!list)return;
-  list.innerHTML=qFiles.map((f,i)=>`<div class="qz-file-item"><span class="qz-file-name">📄 ${f.name} · ${qFileBytes(f.size)}</span><button type="button" class="qz-file-rm" onclick="qRemoveFile(${i})">✕</button></div>`).join('');
-}
-function qRemoveFile(i){qFiles.splice(i,1);qRenderFiles();}
-function qAddFiles(fileList){
-  const incoming=Array.from(fileList||[]);
-  for(const f of incoming){
-    if(qFiles.length>=QZ_MAX_FILES){alert(lang==='el'?`Μέχρι ${QZ_MAX_FILES} αρχεία.`:`Up to ${QZ_MAX_FILES} files.`);break;}
-    if(f.size>QZ_MAX_SIZE){alert(lang==='el'?`Το αρχείο "${f.name}" ξεπερνά τα 10MB.`:`"${f.name}" exceeds 10MB.`);continue;}
-    qFiles.push(f);
-  }
-  qRenderFiles();
-}
-document.addEventListener('DOMContentLoaded',()=>{
-  const input=document.getElementById('q-files');
-  const drop=document.getElementById('qFileDrop');
-  if(input)input.addEventListener('change',e=>{qAddFiles(e.target.files);input.value='';});
-  if(drop){
-    ['dragenter','dragover'].forEach(ev=>drop.addEventListener(ev,e=>{e.preventDefault();drop.classList.add('qz-drag');}));
-    ['dragleave','drop'].forEach(ev=>drop.addEventListener(ev,e=>{e.preventDefault();drop.classList.remove('qz-drag');}));
-    drop.addEventListener('drop',e=>{if(e.dataTransfer&&e.dataTransfer.files)qAddFiles(e.dataTransfer.files);});
-  }
-});
 function qSubmit(){
   const name=document.getElementById('q-name').value.trim();
   const email=document.getElementById('q-email').value.trim();
@@ -909,20 +849,9 @@ function qSubmit(){
     const s=btn.closest('.quiz-step').dataset.step;
     qAns[s]=btn.getAttribute(lang==='el'?'data-vel':'data-ven')||'—';
   });
-  const fd=new FormData();
-  fd.append('form-name','translation');
-  fd.append('name',name);
-  fd.append('email',email);
-  fd.append('document-type',qAns[1]||'—');
-  fd.append('source-language',qAns[2]||'—');
-  fd.append('document-length',qAns[3]||'—');
-  fd.append('urgency',qAns[4]||'—');
-  fd.append('notes',document.getElementById('q-notes').value.trim());
-  qFiles.forEach(f=>fd.append('attachment',f,f.name));
-  fetch('/',{method:'POST',body:fd}).catch(()=>{});
-  const lb=lang==='el'?{n:'Όνομα',e:'Email',d:'Τύπος',s:'Γλώσσα',l:'Μέγεθος',u:'Επείγον',f:'Αρχεία'}:{n:'Name',e:'Email',d:'Type',s:'Language',l:'Length',u:'Urgency',f:'Files'};
-  const filesLine=qFiles.length?`<br><strong>${lb.f}:</strong> ${qFiles.map(f=>f.name).join(', ')}`:'';
-  document.getElementById('qrSummary').innerHTML=`<strong>${lb.n}:</strong> ${name}<br><strong>${lb.e}:</strong> ${email}<br><strong>${lb.d}:</strong> ${qAns[1]||'—'}<br><strong>${lb.s}:</strong> ${qAns[2]||'—'}<br><strong>${lb.l}:</strong> ${qAns[3]||'—'}<br><strong>${lb.u}:</strong> ${qAns[4]||'—'}${filesLine}`;
+  fetch('/',{method:'POST',headers:{'Content-Type':'application/x-www-form-urlencoded'},body:new URLSearchParams({'form-name':'translation','name':name,'email':email,'document-type':qAns[1]||'—','source-language':qAns[2]||'—','document-length':qAns[3]||'—','urgency':qAns[4]||'—','notes':document.getElementById('q-notes').value.trim()}).toString()}).catch(()=>{});
+  const lb=lang==='el'?{n:'Όνομα',e:'Email',d:'Τύπος',s:'Γλώσσα',l:'Μέγεθος',u:'Επείγον'}:{n:'Name',e:'Email',d:'Type',s:'Language',l:'Length',u:'Urgency'};
+  document.getElementById('qrSummary').innerHTML=`<strong>${lb.n}:</strong> ${name}<br><strong>${lb.e}:</strong> ${email}<br><strong>${lb.d}:</strong> ${qAns[1]||'—'}<br><strong>${lb.s}:</strong> ${qAns[2]||'—'}<br><strong>${lb.l}:</strong> ${qAns[3]||'—'}<br><strong>${lb.u}:</strong> ${qAns[4]||'—'}`;
   qShow('result');
   document.querySelectorAll('.qps').forEach(s=>{s.classList.add('done');s.classList.remove('active');});
 }
@@ -930,7 +859,6 @@ function qReset(){
   qStep=1;Object.keys(qAns).forEach(k=>delete qAns[k]);
   document.querySelectorAll('.quiz-opt').forEach(b=>b.classList.remove('sel'));
   ['q-name','q-email','q-notes'].forEach(id=>document.getElementById(id).value='');
-  qFiles=[];qRenderFiles();
   qShow(1);
 }
 
